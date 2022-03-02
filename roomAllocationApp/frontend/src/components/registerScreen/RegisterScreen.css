@@ -1,0 +1,31 @@
+.registerContainer {
+  background-image: radial-gradient(
+    circle at top right,
+    rgb(36, 9, 119) 0%,
+    rgb(36, 9, 119) 48%,
+    rgb(72, 7, 149) 48%,
+    rgb(72, 7, 149) 53%,
+    rgb(109, 5, 178) 53%,
+    rgb(109, 5, 178) 56%,
+    rgb(145, 2, 208) 56%,
+    rgb(145, 2, 208) 69%,
+    rgb(181, 0, 237) 69%,
+    rgb(181, 0, 237) 100%
+  );
+}
+
+.registerContainer__registerCard {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px rgb(0 0 0 / 5%);
+  color: #fff;
+}
+
+.registerContainer__registerCard__topImg {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

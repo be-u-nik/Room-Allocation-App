@@ -1,0 +1,108 @@
+Metadata-Version: 2.1
+Name: django-webpack-dev-server
+Version: 0.0.18
+Summary: A Django app to setup configuration files for React in a Django Project.
+Home-page: https://github.com/Jitensid/django-webpack-dev-server
+Author: Jiten Sidhpura
+Author-email: jitensidhpura2000@gmail.com
+License: MIT
+Download-URL: https://github.com/Jitensid/django-webpack-dev-server/archive/refs/tags/0.0.18.tar.gz
+Keywords: django,react,webpack4,webpack_dev_server,command-line,project-generator,template-generator,javascript,typescript
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: progressbar2
+Requires-Dist: python-dotenv
+
+# django-webpack-dev-server
+
+[![PyPI version](https://badge.fury.io/py/django-webpack-dev-server.svg)](https://badge.fury.io/py/django-webpack-dev-server)
+[![codecov](https://codecov.io/gh/Jitensid/django-webpack-dev-server/branch/main/graph/badge.svg?token=D952NCAC8I)](https://codecov.io/gh/Jitensid/django-webpack-dev-server)
+[![Requirements Status](https://requires.io/github/Jitensid/django-webpack-dev-server/requirements.svg?branch=main)](https://requires.io/github/Jitensid/django-webpack-dev-server/requirements/?branch=main)
+[![CI](https://github.com/Jitensid/django-webpack-dev-server/actions/workflows/main.yml/badge.svg)](https://github.com/Jitensid/django-webpack-dev-server/actions/workflows/main.yml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Jitensid/django-webpack-dev-server/main.svg)](https://results.pre-commit.ci/latest/github/Jitensid/django-webpack-dev-server/main)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![License MIT](https://img.shields.io/github/license/Jitensid/django-webpack-dev-server?color=purple)](https://github.com/Jitensid/django-webpack-dev-server/blob/main/LICENSE)
+
+Django Webpack Dev Server is a command line Django reusable app to setup configuration files for React. It uses webpack and webpack_dev_server to bundle your frontend code.
+
+![React+Django](https://user-images.githubusercontent.com/46622106/139619283-39d53e00-25d6-4f3b-aee9-e47403564ca3.gif)
+
+## Installation
+
+Install using pip
+
+`pip install django-webpack-dev-server`
+
+## Package Supports
+
+1.  React (Javascript)
+2.  React (Typescript)
+
+## Quick start
+
+1.  Add 'django_webpack_dev_server' to your INSTALLED_APPS in
+    settings.py like this:
+
+    ```python
+        INSTALLED_APPS = [
+            ...
+            'django_webpack_dev_server',
+        ]
+    ```
+
+2.  Default django app name is frontend and template is javascript. You can provide your name and template by running <br /> `python manage.py generate react --app_name your_app_name --template (javascript/typescript)`
+
+3.  Run `python manage.py generate react` to create a django app with the default app_name and template.
+
+4.  Add the new django app to your INSTALLED_APPS setting like in step 1.
+
+5.  Add the path for the new django app in the urlpatterns of the project's urls.py like this:
+
+    ```python
+    from django.urls import path, include
+
+    path("", include("your_app_name.urls")),
+    ```
+
+6.  Run `python manage.py runserver` to start the django's development
+    server.
+
+7.  `cd` into the newly created django app and run `npm start` and go to
+    (<http://localhost:8080/>).
+
+8.  Run `npm run build` to create a production build of your frontend code.
+
+## Important Links
+
+1. [Demo Video of the Package](https://www.youtube.com/watch?v=6c-lPkKzI_E)
+
+2. [Check out Tech with Tim's Youtube Playlist for a detailed explanation in building Django and React Full Stack App.](https://www.youtube.com/watch?v=JD-age0BPVo&list=PLzMcBGfZo4-kCLWnGmK0jUBmGLaJxvi4j)
+
+3. [Webpack Documentation](https://v4.webpack.js.org/concepts/)
+
+## Contributions
+
+If you find an issue or have a new feature then feel free to make a Pull Request. Your Contributions are always welcomed.
+
+### Running the Package in Development Mode
+
+1. You can run the package in development mode by setting the "SOFTWARE_ENVIRONMENT_MODE" environment variable equal to "development".
+
+2. Now you can load assets from your local system and the new changes can be tested.
+
+## License
+
+This project is provided under the [MIT License](https://github.com/Jitensid/django-webpack-dev-server/blob/main/LICENSE).
+
+
